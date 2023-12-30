@@ -13,8 +13,8 @@ let config = {
 		// Configuramos phaser para que se adapte al tamaño de pantalla donde ejecutadmos
 		// con un mínimo y un máximo de tamaño
 		mode: Phaser.Scale.FIT,
-        width: 256,
-        height: 256,
+        width: 400,
+        height: 400,
 		zoom: 1
     },
     scene: [Boot, Title, Level],
