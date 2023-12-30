@@ -48,6 +48,7 @@ export default class Title extends Phaser.Scene {
 
         text.setInteractive();
         text.on('pointerdown', () => {
+            this.Music.stop();
             this.scene.start('Level')
         })
     }
