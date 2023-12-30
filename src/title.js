@@ -32,7 +32,7 @@ export default class Title extends Phaser.Scene {
                 repeat: 0,
                 yoyo: false,
             });
-        this.textButton(this.cameras.main.centerX, 300, 'Start', '#db7644', '#000000');
+        this.textButton(this.cameras.main.centerX, 300, 'Start', '#8f34eb', '#000000');
     }
     textButton(x, y, message, stroke, fill) {
         let text = this.add.text(x, y, message, {

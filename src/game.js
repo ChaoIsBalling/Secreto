@@ -1,6 +1,7 @@
 import Level from './level.js';
 import Title from './title.js';
 import Boot from './boot.js'
+import PreTitle from './pretitle.js';
 
 let config = {
     type: Phaser.AUTO,
@@ -17,7 +18,7 @@ let config = {
         height: 400,
 		zoom: 1
     },
-    scene: [Boot, Title, Level],
+    scene: [Boot, PreTitle,Title, Level],
     physics: { 
         default: 'arcade', 
         arcade: { 
