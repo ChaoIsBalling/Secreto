@@ -6,20 +6,19 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
         scene.physics.add.existing(this);
         this.pool=pool;
         this.dead = false;
-        this.speed=1;
-        this.directonX=0;
-        this.directonY=100;
+        this.speed=100;
+        this.directionX=0;
+        this.directionY=0;
     }
     preUpdate(t,dt) {
         super.preUpdate(t,dt);
-        console.log(this.dead)
         if (!this.dead)
-           { this.body.setVelocityY(this.directonY*this.speed);
-            this.body.setVelocityX(this.directonX*this.speed);
+           { this.body.setVelocityY(this.directionY*this.speed);
+            this.body.setVelocityX(this.directionX*this.speed);
            }
            else{
-            this.body.setVelocityY(-this.directonY*this.speed*10);
-            this.body.setVelocityX(-this.directonX*this.speed*10);
+            this.body.setVelocityY(-this.directionY*this.speed*20);
+            this.body.setVelocityX(-this.directionX*this.speed*20);
            }
     }
     death() {

@@ -30,7 +30,7 @@ export default class Pool {
 		});
 	}
 	
-	spawn (x, y, animationKey='none') {
+	spawn (x, y,dirX,dirY, animationKey='none') {
 		let entity = this._group.getFirstDead();
 		
 		/* 
@@ -46,6 +46,8 @@ export default class Pool {
 				let newMax = this.max.value < this._group.getLength()*2 ? this.max.value-this._group.getLength() : this._group.getLength()
 				for(let i=0; i<newMax; i++){ //En este caso hemos elegido duplicar el tamaño
 					entity = new Enemy(this.scene, x, y, this)
+                    entity.directionX=dirX;
+                    entity.directionY=dirY
 					newEntities.push(entity);
 				}	
 				this.addMultipleEntity(newEntities);
@@ -63,6 +65,8 @@ export default class Pool {
 		if (entity) {
 			entity.x = x;
 			entity.y = y;
+            entity.directionX=dirX;
+            entity.directionY=dirY
 			entity.play(animationKey)
 			entity.setActive(true);
 			entity.setVisible(true); 

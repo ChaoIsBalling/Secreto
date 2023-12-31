@@ -4,6 +4,8 @@ export default class Punch extends Phaser.GameObjects.Sprite{
         this.scene.add.existing(this);
         scene.physics.add.existing(this);
         this.time=20;
+        this.x=x;
+        this.y=y;
     }
     preUpdate(t,dt)
     {
@@ -16,6 +18,8 @@ export default class Punch extends Phaser.GameObjects.Sprite{
             this.time=20;
             this.setActive(false);
             this.setVisible(false); 
+            this.x=0;
+            this.y=0;
         }
        }
     }
