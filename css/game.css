@@ -9,3 +9,11 @@ h1 {
   text-align: center;
   font-family: 'gummy';
 }
+h2 {
+  text-align: left;
+  font-family: 'gummy';
+}
+ul {
+  text-align: left;
+  font-family: 'gummy';
+}
