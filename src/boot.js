@@ -9,6 +9,7 @@ export default class Boot extends Phaser.Scene
         this.load.image('bg','assets/images/background.png');
         this.load.image('player','assets/images/player.png');
         this.load.image('fist','assets/images/punch.png')
+        this.load.image('boom','assets/images/explosion.png')
         //Letters
         this.load.image('0','assets/images/Letters/A.png')
         this.load.image('1','assets/images/Letters/B.png')
@@ -38,6 +39,8 @@ export default class Boot extends Phaser.Scene
         this.load.image('25','assets/images/Letters/Z.png')
          //SOUNDS
          this.load.audio('title', 'assets/sounds/title.mp3'); 
+         this.load.audio('explode', 'assets/sounds/ahh.mp3'); 
+         this.load.audio('music', 'assets/sounds/music.mp3'); 
 
     }
     create()

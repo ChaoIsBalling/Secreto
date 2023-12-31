@@ -30,7 +30,7 @@ export default class Pool {
 		});
 	}
 	
-	spawn (x, y,dirX,dirY, animationKey='none') {
+	spawn (x, y,dirX,dirY,speed, animationKey='none') {
 		let entity = this._group.getFirstDead();
 		
 		/* 
@@ -48,6 +48,7 @@ export default class Pool {
 					entity = new Enemy(this.scene, x, y, this)
                     entity.directionX=dirX;
                     entity.directionY=dirY
+                    entity.speed+=speed;
 					newEntities.push(entity);
 				}	
 				this.addMultipleEntity(newEntities);
@@ -65,6 +66,7 @@ export default class Pool {
 		if (entity) {
 			entity.x = x;
 			entity.y = y;
+            entity.speed+=speed;
             entity.directionX=dirX;
             entity.directionY=dirY
 			entity.play(animationKey)

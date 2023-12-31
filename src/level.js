@@ -11,6 +11,10 @@ export default class Level extends Phaser.Scene {
         this.textScore;
     }
     create() {
+        this.Music = this.sound.add('music');
+              this.Music.play({
+                loop:true
+              });
         this.bg = this.add.image(0, 0, 'bg').setOrigin(0);
         let text = this.add.text(40, 30, "Score:", {
             fontFamily: 'gummy',
@@ -52,19 +56,19 @@ export default class Level extends Phaser.Scene {
            var pos=Math.floor(Math.random() * (3 - 0 + 1) + 0)
            if(pos ==0)
            {
-            this.enemyPool.spawn(this.cameras.main.centerX, 0,0,1);
+            this.enemyPool.spawn(this.cameras.main.centerX, 0,0,1,this.score/10);
            }
            else if(pos ==1)
            {
-            this.enemyPool.spawn(this.cameras.main.centerX, 512,0,-1);
+            this.enemyPool.spawn(this.cameras.main.centerX, 512,0,-1, this.score/10);
            }
            else if(pos ==2)
            {
-            this.enemyPool.spawn(0, this.cameras.main.centerY,1,0);
+            this.enemyPool.spawn(0, this.cameras.main.centerY,1,0,this.score/10);
            }
            else if(pos ==3)
            {
-            this.enemyPool.spawn(512+32, this.cameras.main.centerY,-1,0);
+            this.enemyPool.spawn(512+32, this.cameras.main.centerY,-1,0,this.score/10);
            }
            
         }
@@ -82,6 +86,8 @@ export default class Level extends Phaser.Scene {
         this.levelFinish();
     }
     EnemyDie(punch, enemy) {
+        var Music = this.sound.add('explode');
+              Music.play();
         this.score+=10;
         this.textScore.setText(this.score)
         enemy.dead = true;
@@ -112,6 +118,7 @@ export default class Level extends Phaser.Scene {
         if (this.levelEnded) {
             this.transitionTime--;
             if (this.transitionTime <= 0) {
+                this.Music.stop();
                 this.levelEnded = false;
                 this.transitionTime = 200;
                 this.score=0;

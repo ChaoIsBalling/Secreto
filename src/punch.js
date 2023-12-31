@@ -21,6 +21,7 @@ export default class Punch extends Phaser.GameObjects.Sprite{
             this.x=0;
             this.y=0;
         }
+        
        }
     }
 }

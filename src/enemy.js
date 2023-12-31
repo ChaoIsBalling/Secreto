@@ -16,9 +16,16 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
            { this.body.setVelocityY(this.directionY*this.speed);
             this.body.setVelocityX(this.directionX*this.speed);
            }
-           else{
+           else if(this.dead) {
+            if(this.y<0||this.y>512||this.x<0|this.x>512)
+            {var Music = this.scene.sound.add('explode');
+              Music.play();
+                this.destroy();
+            }
+            else{
             this.body.setVelocityY(-this.directionY*this.speed*20);
             this.body.setVelocityX(-this.directionX*this.speed*20);
+                 }
            }
     }
     death() {
