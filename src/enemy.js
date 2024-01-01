@@ -18,8 +18,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
            }
            else if(this.dead) {
             if(this.y<0||this.y>512||this.x<0|this.x>512)
-            {var Music = this.scene.sound.add('explode');
-              Music.play();
+            {
                 this.destroy();
             }
             else{

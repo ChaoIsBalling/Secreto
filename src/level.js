@@ -56,19 +56,19 @@ export default class Level extends Phaser.Scene {
            var pos=Math.floor(Math.random() * (3 - 0 + 1) + 0)
            if(pos ==0)
            {
-            this.enemyPool.spawn(this.cameras.main.centerX, 0,0,1,this.score/10);
+            this.enemyPool.spawn(this.cameras.main.centerX, 0,0,1,(this.score/100)*100);
            }
            else if(pos ==1)
            {
-            this.enemyPool.spawn(this.cameras.main.centerX, 512,0,-1, this.score/10);
+            this.enemyPool.spawn(this.cameras.main.centerX, 512,0,-1, (this.score/100)*100);
            }
            else if(pos ==2)
            {
-            this.enemyPool.spawn(0, this.cameras.main.centerY,1,0,this.score/10);
+            this.enemyPool.spawn(0, this.cameras.main.centerY,1,0,(this.score/100)*100);
            }
            else if(pos ==3)
            {
-            this.enemyPool.spawn(512+32, this.cameras.main.centerY,-1,0,this.score/10);
+            this.enemyPool.spawn(512+32, this.cameras.main.centerY,-1,0,(this.score/100)*100);
            }
            
         }
